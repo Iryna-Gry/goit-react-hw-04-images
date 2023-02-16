@@ -1,10 +1,10 @@
-import Button from './Button/Button';
-import ImageGallery from './ImageGallery/ImageGallery';
-import Loader from './Loader/Loader';
-import Searchbar from './Searchbar/Searchbar';
-import { Container } from './Container/Container.styled';
+import Button from 'components/Button/Button';
+import ImageGallery from 'components/ImageGallery/ImageGallery';
+import Loader from 'components/Loader/Loader';
+import Searchbar from 'components/Searchbar/Searchbar';
+import { Container } from 'components/Container/Container.styled';
 import { useState, useEffect } from 'react';
-import css from './App.module.css';
+import css from 'components/App.module.css';
 import fetchAPI from 'services/fetchAPI';
 
 export const App = () => {
@@ -35,7 +35,7 @@ export const App = () => {
       .catch(error => {
         setError(error);
       });
-  }, [query, currPage]);
+  }, [query, currPage, perPage]);
 
   const handleSearchSubmit = keyword => {
     if (keyword === '') {

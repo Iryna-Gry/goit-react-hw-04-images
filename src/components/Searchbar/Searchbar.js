@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import css from './Searchbar.module.css';
+import css from 'components/Searchbar/Searchbar.module.css';
 import { AiOutlineSearch } from 'react-icons/ai';
 import PropTypes from 'prop-types';
 

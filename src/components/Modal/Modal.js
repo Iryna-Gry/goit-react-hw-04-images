@@ -1,6 +1,6 @@
 import React, { createRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import css from './Modal.module.css';
+import css from 'components/Modal/Modal.module.css';
 import PropTypes from 'prop-types';
 
 const MODAL_ROOT = document.querySelector('#modal-root');
@@ -12,11 +12,13 @@ const Modal = ({ id, largeImageURL, onClose }) => {
     if (e.code !== 'Escape') return;
     onClose();
   };
+
   useEffect(() => {
     window.addEventListener('keydown', handleKey);
     return () => {
       window.removeEventListener('keydown', handleKey);
     };
+    // eslint-disable-next-line
   }, []);
 
   const handleMouseClick = e => {
