@@ -8,18 +8,16 @@ const MODAL_ROOT = document.querySelector('#modal-root');
 const Modal = ({ id, largeImageURL, onClose }) => {
   const modalRef = createRef();
 
-  const handleKey = e => {
-    if (e.code !== 'Escape') return;
-    onClose();
-  };
-
   useEffect(() => {
+    const handleKey = e => {
+      if (e.code !== 'Escape') return;
+      onClose();
+    };
     window.addEventListener('keydown', handleKey);
     return () => {
       window.removeEventListener('keydown', handleKey);
     };
-    // eslint-disable-next-line
-  }, []);
+  }, [onClose]);
 
   const handleMouseClick = e => {
     if (e.target && modalRef.current !== e.target) return;
